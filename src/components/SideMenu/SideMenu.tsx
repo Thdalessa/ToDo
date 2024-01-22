@@ -1,4 +1,5 @@
 import { Avatar, Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, useMediaQuery } from "@mui/material";
+import Link from "next/link";
 import { FC } from "react";
 
 interface PropsTypes {
@@ -24,15 +25,17 @@ const SideMenu: FC<PropsTypes> = ({ openMenu, setOpenMenu }) => {
             >
                 <Avatar sx={{ width: 200, height: 200, marginX: "auto", marginTop: 1 }} />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem key={text} disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
+                    {[{ title: "My List", link: "/my-list" }].map((item, index) => (
+                        <Link href={item.link}>
+                            <ListItem key={item.title} disablePadding >
+                                <ListItemButton>
+                                    {/* <ListItemIcon>
 
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
-                            </ListItemButton>
-                        </ListItem>
+                                </ListItemIcon> */}
+                                    <ListItemText primary={item.title} />
+                                </ListItemButton>
+                            </ListItem>
+                        </Link>
                     ))}
                 </List>
             </Box>

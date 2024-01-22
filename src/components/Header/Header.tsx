@@ -19,8 +19,8 @@ const Header: FC<PropsTypes> = ({ }) => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{ top: 0 }}>
-                <Toolbar>
+            <AppBar position="static" sx={{ top: 0, height: "70px" }} >
+                <Toolbar sx={{ height: "70px" }}>
                     <IconButton
                         size="large"
                         edge="start"
